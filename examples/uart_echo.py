@@ -1,6 +1,7 @@
 import time
 
-from cc.serializer import UARTSerializer
+from serializer import UARTSerializer
+
 
 ser = UARTSerializer(port="COM1", baudrate=115200)
 

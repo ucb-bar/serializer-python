@@ -1,7 +1,7 @@
-import time
 import socket
 
-from cc.serializer import SocketSerializer
+from serializer import SocketSerializer
+
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect(("127.0.0.1", 50001))
@@ -9,7 +9,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     ser = SocketSerializer(s)
 
     ser.transmit(b'Hello, world')
-    
+
     ser.set_receive_timeout(0.1)
 
     counter = 0

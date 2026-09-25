@@ -1,7 +1,7 @@
-import time
-import socket 
+import socket
 
-from cc.serializer import SocketSerializer
+from serializer import SocketSerializer
+
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(("", 50001))
@@ -12,7 +12,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
         ser = SocketSerializer(conn)
         ser.set_receive_timeout(0.1)
-        
+
         while True:
             buffer = ser.receive()
             print("recv:", buffer)
